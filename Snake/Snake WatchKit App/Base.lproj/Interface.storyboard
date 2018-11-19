@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Snake_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Snake" textAlignment="center" id="CzU-Ib-OCz"/>
+                        <label width="1" alignment="left" text="ESGI" textAlignment="center" id="bdf-bP-pCg"/>
+                        <button width="1" alignment="left" title="Start" id="V2Y-tE-Dd2">
+                            <connections>
+                                <action selector="touchStart" destination="AgC-eL-Hgc" id="RQ4-0Q-LLW"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Ranking" id="rDf-Kk-v72"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Snake_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Play-->
+        <scene sceneID="pla-kX-oeu">
+            <objects>
+                <controller identifier="Play" id="avk-9r-rif" customClass="PlayInterfaceController" customModule="Snake_WatchKit_Extension">
+                    <items>
+                        <button alignment="center" title="UP" id="OqL-Ra-zLA">
+                            <connections>
+                                <action selector="touchUp" destination="avk-9r-rif" id="wmn-Mc-tTj"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" id="gSG-dp-oUK">
+                            <items>
+                                <button alignment="left" title="Left" id="ewy-Ie-O8v">
+                                    <connections>
+                                        <action selector="touchLeft" destination="avk-9r-rif" id="061-oi-8Tt"/>
+                                    </connections>
+                                </button>
+                                <button alignment="right" title="Right" id="fUl-ah-h16">
+                                    <connections>
+                                        <action selector="touchRight" destination="avk-9r-rif" id="Q4L-rf-m4N"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button alignment="center" title="Down" id="tX4-Fe-1fv">
+                            <connections>
+                                <action selector="touchDoxn" destination="avk-9r-rif" id="cvj-Cg-kQu"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="touchLeft" destination="ewy-Ie-O8v" id="1DA-7N-2s2"/>
+                        <outlet property="touchRight" destination="fUl-ah-h16" id="dzW-J9-ohd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="450" y="345"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchSample_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" spacing="6" id="AVD-xg-96y">
+                            <items>
+                                <label width="0.33000000000000002" alignment="left" text="G" textAlignment="center" id="Rd3-7R-Yrg"/>
+                                <label width="0.33000000000000002" alignment="left" text="E" textAlignment="center" id="cbs-yr-d0s"/>
+                                <label width="0.33000000000000002" alignment="left" text="S" textAlignment="center" id="1ZW-aV-UGT"/>
+                            </items>
+                            <color key="backgroundColor" red="0.0098769430051813822" green="0.0070869628822904937" blue="0.0017195387145465832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <group width="1" alignment="left" spacing="1" id="jz2-rH-ahc">
+                            <items>
+                                <label width="0.20000000000000001" alignment="left" text="ANDROID" textAlignment="center" numberOfLines="0" id="PLH-Lc-COs"/>
+                                <imageView width="0.80000000000000004" height="1" heightAdjustment="-1" alignment="left" image="pic" contentMode="scaleAspectFit" id="9Xe-RQ-lIj"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Button" id="glX-8j-yb1">
+                            <color key="backgroundColor" red="0.99706525259067358" green="0.71542018948826913" blue="0.17358531904653285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onnewButnClicked" destination="AgC-eL-Hgc" id="28b-7C-dcf"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Next Controller" id="uH8-R8-Fgt">
+                            <color key="backgroundColor" red="0.99706525259067358" green="0.71542018948826913" blue="0.17358531904653285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onNextClicked" destination="AgC-eL-Hgc" id="bMP-3v-VRA"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="androidTitle" destination="PLH-Lc-COs" id="gAU-3i-wdb"/>
+                        <outlet property="image" destination="9Xe-RQ-lIj" id="elK-4A-XBR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--HK-->
+        <scene sceneID="fHU-xz-Tn8">
+            <objects>
+                <controller identifier="HK" id="H2g-jV-qpO" customClass="HomeKitInterfaceController" customModule="WatchSample_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Hello" id="PAI-Nh-b0D"/>
+                        <slider width="1" alignment="left" value="1" maximum="10" steps="4" id="gP5-VI-llC"/>
+                        <switch width="1" alignment="left" value="YES" title="HomeKit" id="Ygr-Lc-chR"/>
+                    </items>
+                    <connections>
+                        <outlet property="hkSwitch" destination="Ygr-Lc-chR" id="WOh-fl-JwE"/>
+                        <outlet property="slider" destination="gP5-VI-llC" id="Rvk-d7-SgW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="474" y="329"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="CrR-U4-kit">
+            <objects>
+                <controller identifier="List" id="FHe-hM-XGg" customClass="ListInterfaceController" customModule="WatchSample_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="bWF-lS-rCV">
+                            <items>
+                                <tableRow identifier="Building" id="15s-To-jSJ" customClass="BuildingRowController" customModule="WatchSample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="hYI-Ql-JQf">
+                                        <items>
+                                            <label width="1" alignment="left" text="Label" textAlignment="center" id="b3n-Xc-qAG"/>
+                                            <label width="1" alignment="left" text="Label" textAlignment="center" id="qhm-am-lFV">
+                                                <color key="textColor" red="1" green="0.60281113282242171" blue="0.21399909211060142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="price" destination="qhm-am-lFV" id="eUH-Mg-h5S"/>
+                                        <outlet property="titleLabel" destination="b3n-Xc-qAG" id="411-pQ-lkW"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="buildingsTable" destination="bWF-lS-rCV" id="4kL-Bb-yJR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="740" y="329"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchSample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--buildingDetails-->
+        <scene sceneID="MeN-PD-4kY">
+            <objects>
+                <controller identifier="buildingDetails" id="aV0-ID-EyY" customClass="BuildingDetailsInterfaceController" customModule="WatchSample_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Hello Details" textAlignment="center" id="wJa-eg-7k0"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="Zxl-Br-eYD">
+                            <color key="textColor" red="1" green="0.53780764111433366" blue="0.075532442961065649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="Remove" id="2f0-hD-yj0">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="1" green="0.54872873564644242" blue="0.079501710339983434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onRemoveCityClicked" destination="aV0-ID-EyY" id="c18-Q2-WNN"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="cityLabel" destination="wJa-eg-7k0" id="zVb-zc-qUf"/>
+                        <outlet property="priceLabel" destination="Zxl-Br-eYD" id="HmO-bY-0sZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1025" y="329"/>
+        </scene>
+    </scenes>
+</document>
